@@ -19,9 +19,9 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YU2-JS-8T1" id="nkL-iq-Ise">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="257" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="vgo-zy-kbf">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="257" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="vgo-zy-kbf">
                                             <rect key="frame" x="8" y="8" width="311" height="21.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -43,7 +43,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="ofA-Qa-6fg" firstAttribute="trailing" secondItem="nkL-iq-Ise" secondAttribute="trailingMargin" id="02Q-hu-Jvb"/>
-                                        <constraint firstItem="ofA-Qa-6fg" firstAttribute="top" secondItem="vgo-zy-kbf" secondAttribute="bottom" constant="8" id="Afs-Py-Vb5"/>
+                                        <constraint firstItem="ofA-Qa-6fg" firstAttribute="top" secondItem="vgo-zy-kbf" secondAttribute="bottom" priority="750" constant="8" id="Afs-Py-Vb5"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="ofA-Qa-6fg" secondAttribute="bottom" constant="8" id="Cit-np-JuW"/>
                                         <constraint firstItem="RLp-k2-lyR" firstAttribute="trailing" secondItem="nkL-iq-Ise" secondAttribute="trailingMargin" id="EAq-WW-cPM"/>
                                         <constraint firstItem="vgo-zy-kbf" firstAttribute="leading" secondItem="nkL-iq-Ise" secondAttribute="leadingMargin" id="GYV-Dt-EZh"/>

@@ -33,13 +33,18 @@ class MainTableViewController: UITableViewController, FeedParserDelegate {
   
   func FeedParserDelegateParsingWasFinished(parser: FeedParser) {
     tableView.reloadData();
+    self.refreshControl?.endRefreshing()
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     UIApplication.sharedApplication().keyWindow?.tintColor = UIColor.blackColor()
-    tableView.estimatedRowHeight = 88
+    tableView.estimatedRowHeight = 200
     tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    var refreshControl = UIRefreshControl()
+    refreshControl.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged)
+    self.refreshControl = refreshControl
     
     
     request(cityDogURL)
@@ -48,7 +53,9 @@ class MainTableViewController: UITableViewController, FeedParserDelegate {
   
   
  
-  
+  func refresh(){
+    request(cityDogURL)
+  }
   
   
   // MARK: - Table view data source
@@ -71,6 +78,8 @@ class MainTableViewController: UITableViewController, FeedParserDelegate {
     cell.titleField.text = feed["title"]
     cell.descriptionField.text = feed["description"]
     
+    
+    
     let dateFormatter = NSDateFormatter()
     dateFormatter.dateFormat = "EEE, dd MMM yyyy"
     let date = (dateFormatter.dateFromString(feed["pubDate"]!))
@@ -85,7 +94,7 @@ class MainTableViewController: UITableViewController, FeedParserDelegate {
     
     cell.feedUrl = feed["link"]
     
-    
+    cell.titleField.adjustsFontSizeToFitWidth = true
     
     return cell
   }
